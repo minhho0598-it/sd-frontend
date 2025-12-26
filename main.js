@@ -5,6 +5,7 @@ const btn = document.getElementById("generate");
 const promptInput = document.getElementById("prompt");
 const img = document.getElementById("output");
 const status = document.getElementById("status");
+const download = document.getElementById("download");
 
 btn.onclick = async () => {
   const prompt = promptInput.value.trim();
@@ -22,10 +23,14 @@ btn.onclick = async () => {
 
     const data = await res.json();
     img.src = "data:image/png;base64," + data.image;
+    // Enable download link
+    download.href = img.src;
+    download.style.display = "inline-block";
     status.textContent = "";
   } catch (err) {
     console.error(err);
     status.textContent = "Error generating image";
+    download.style.display = "none";
   }
 };
 
