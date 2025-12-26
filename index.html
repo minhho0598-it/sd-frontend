@@ -21,12 +21,17 @@
       rows="2"
     ></textarea>
 
+    <label for="num_images">Number of images:</label>
+    <select id="num_images">
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+
     <button id="generate">Generate</button>
-    <a id="download" class="download-btn" download="image.png" style="display:none">Download</a>
 
     <div class="result">
       <p id="status"></p>
-      <img id="output" />
+      <div id="results" class="images-grid"></div>
     </div>
   </div>
 
