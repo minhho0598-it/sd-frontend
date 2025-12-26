@@ -16,6 +16,10 @@ textarea {
   margin-bottom: 12px;
 }
 
+#negative-prompt {
+  margin-top: 6px;
+}
+
 button {
   padding: 10px 20px;
   font-size: 16px;

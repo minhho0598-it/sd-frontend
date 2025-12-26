@@ -3,22 +3,25 @@ const API_URL = "https://sd.intiger.site/generate";
 
 const btn = document.getElementById("generate");
 const promptInput = document.getElementById("prompt");
+const negativeInput = document.getElementById("negative-prompt");
 const img = document.getElementById("output");
 const status = document.getElementById("status");
 const download = document.getElementById("download");
 
 btn.onclick = async () => {
   const prompt = promptInput.value.trim();
+  const negativePrompt = negativeInput ? negativeInput.value.trim() : "";
   if (!prompt) return;
 
   status.textContent = "Generating...";
+  download.style.display = "none";
   img.src = "";
 
   try {
     const res = await fetch(API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ prompt })
+      body: JSON.stringify({ prompt, negative_prompt: negativePrompt })
     });
 
     const data = await res.json();
