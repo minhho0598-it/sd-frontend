@@ -1,0 +1,33 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.result {
+  margin-top: 20px;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
